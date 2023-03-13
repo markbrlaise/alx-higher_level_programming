@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#chmod u+x $1
+echo '#!/usr/bin/env node'>$1
+chmod u+x $1
+vi $1
