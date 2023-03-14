@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+file_name=$(echo $2 | cut -d '.' -f 1)
+echo '#!/usr/bin/node'>tests/$1
+echo "const Rectangle = require('.././$file_name');">>tests/$1
+vi tests/$1
+
