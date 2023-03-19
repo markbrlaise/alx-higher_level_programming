@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+index = $($1 | cut -d '-' -f 0)
+echo '
+-- create states table in hbtn_0e_<>_usa with some data
+CREATE DATABASE IF NOT EXISTS hbtn_0
