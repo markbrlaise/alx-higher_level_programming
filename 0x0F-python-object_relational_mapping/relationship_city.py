@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """
 
@@ -7,6 +7,7 @@ City model class with id, name and state_id as foreign key
 
 from relationship_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
+
 
 class City(Base):
     __tablename__ = 'cities'
