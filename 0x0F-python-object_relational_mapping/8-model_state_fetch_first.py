@@ -10,7 +10,9 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
-    session = Session()
-    rows = list(instance for instance in session.query(State)
-                .order_by(State.id))
-    print(rows[0].id, rows[0].name, sep=': ')
+    sessioi = Session()
+    instance = session.query(State).first()
+    if instance is None:
+        print("Nothing")
+    else:
+        print(instance.id, instance.name, sep=": ")
