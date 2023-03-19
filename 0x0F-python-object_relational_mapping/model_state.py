@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 
 defining the State class inheriting from the Base declarative class
@@ -8,6 +8,7 @@ from sqlalchemy import Integer, Column, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base(metadata=MetaData())
+
 
 class State(Base):
     """
