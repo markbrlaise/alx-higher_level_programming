@@ -1,23 +1,20 @@
 #!/usr/bin/python3
 """
-
-defining the State class inheriting from the Base declarative class
+Contains State class and Base, an instance of declarative_base()
 """
-
-from sqlalchemy import Integer, Column, String, MetaData
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-Base = declarative_base(metadata=MetaData())
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
     """
-
-    class with id and name attributes of each state
+    Class with id and name attributes of each state
     """
     __tablename__ = 'states'
-
-    id = Column(Integer, nullable=False, unique=True, primary_key=True)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="state")
+    cities = relationship("City", backref="states")
