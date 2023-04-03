@@ -9,7 +9,7 @@ from requests import get, auth
 if __name__ == "__main__":
     owner = sys.argv[1]
     repo = sys.argv[2]
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
+    url = "https://api.github.com/repos/{}/{}/commits".format(repo, owner)
     r = get(url)
     commits = r.json()
     for commit in commits[:10]:
