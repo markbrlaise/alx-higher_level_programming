@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""
+get request displaying body of response while handling errors
+"""
+import sys
+import requests
+
+if __name__ == "__main__":
+    r = request.get(sys.argv[1])
+    if r.status_code >= 400:
+        print("Error code: {}".format(r.status_code))
+    else:
+        print(r.text)
