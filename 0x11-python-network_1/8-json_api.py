@@ -12,7 +12,7 @@ if __name__ == "__main__":
     r = requests.post(url, data={'q': q})
     try:
         r_dict = r.json()
-        if r_dict:
+        if r_dict != {}:
             print("[{}] {}".format(r_dict.get("id"), r_dict.get("name")))
         else:
             print("No result")
