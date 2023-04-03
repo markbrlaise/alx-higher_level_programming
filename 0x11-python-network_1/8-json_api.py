@@ -8,7 +8,7 @@ import requests
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    q = sys.argv[2] if len(argv) == 2 else ""
+    q = sys.argv[2] if len(argv) >= 2 else ""
     r = requests.post(url, data={'q': q})
     try:
         r_dict = r.json()
